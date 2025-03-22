@@ -6,18 +6,18 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LGUI k3  &ht LCTRL k4
+#define HRMR(k1,k2,k3,k4) &ht RCTRL k1  &ht RGUI k2  &ht RALT k3  &ht RSHFT k4
 
 / {
     behaviors {
-        ht: hold_tap {
+        ht: hold_tap { // https://zmk.dev/docs/keymaps/behaviors/hold-tap
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
+            flavor = "tap-preferred"; // hold-preferred, balanced, tap-preferred
+            tapping-term-ms = <220>; // duration in ms after which a key press is considered hold
+            quick-tap-ms = <150>; // enables double press+hold to hold the key (useful for backspace)
+            require-prior-idle-ms = <100>; // disable hold tap when typing quickly 
             bindings = <&kp>, <&kp>;
         };
     };
@@ -35,16 +35,16 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+        //│  Q       │  C       │  O       │  P       │  W       │   │  J       │  M       │  D       │  !       │  Y       │
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
+        //│  A       │  S       │  E       │  N       │  F       │   │  L       │  R       │  T       │  I       │  U       │
             HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
+        //│  Z       │  X       │ - ?      │  V       │  B       │   │ . :      │  H       │  G       │ , ;      │  K       │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
+                                            &kp ESC    &lt 2 BSPC     &lt 1 SPACE &kp ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -52,16 +52,16 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ INSERT   │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  :       │
-            &kp INS    &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp COLON
+        //│          │  HOME    │  UP      │  END     │  PG UP   │   │ FSLH     │  7       │  8       │  9       │          │
+            &none      &kp HOME   &kp UP     &kp END    &kp PG_UP    &kp KP_SLASH &kp N7     &kp N8     &kp N9     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ;       │
-            &kp DEL    &kp N4     &kp N5     &kp N6     &trans         &kp LEFT   &kp DOWN   &kp UP   &kp RIGHT   &kp SEMI
+        //│  TAB     │  LEFT    │  DOWN    │  RIGHT   │  PG DN   │   │ -        │  4       │  5       │  6       │  0       │
+            HRML(TAB,   LEFT,      DOWN,      RIGHT)    &kp PG_DN    &kp KP_MINUS HRMR(N4,    N5,        N6,        N0)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CAPS     │  7       │  8       │  9       │  0       │   │          │          │          │          │          │
-           &caps_word  &kp N7     &kp N8     &kp N9     &kp N0         &trans     &trans     &trans     &trans     &studio_unlock
+        //│          │  VOL-    │  MUTE    │  VOL+    │          │   │ ,        │  1       │  2       │  3       │ .        │
+            &none   &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none       &kp KP_COMMA &kp N1     &kp N2     &kp N3     &kp KP_DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &kp ESC        &trans     &trans
+                                             &trans     &none          &none      &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -69,14 +69,14 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-            &trans     &kp LBKT   &kp LBRC   &kp RBRC   &trans         &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT   &kp TILDE
+        //│  F1      │  F2      │  F3      │  F4      │  F5      │   │  F6      │  F7      │  F8      │  F9      │  F10     │
+            &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
-            &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH   &kp GRAVE
+        //│  TAB     │  ALT     │  CMD     │  CTRL    │          │   │          │  CTRL    │  CMD     │  ALT     │  F11     │
+          &ht LSHFT TAB &kp LALT  &kp LGUI   &kp LCTRL  &none          &none     &kp RCTRL  &kp RGUI   &kp RALT   &ht RSHFT F11
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-            &trans     &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &trans
+        //│          │ CMD+1    │ CMD+4    │CMD+SFT+4 │          │   │          │          │          │          │  F12     │
+            &none   &kp LG(N1) &kp LG(N4) &kp LG(LS(N4)) &none          &none      &none      &none      &none      &kp F12
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -93,7 +93,7 @@
           &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
+         &studio_unlock &trans    &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans   &studio_unlock
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
