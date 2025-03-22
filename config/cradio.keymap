@@ -57,7 +57,7 @@
         //│          │  VOL-    │  MUTE    │  VOL+    │          │              │ ,        │  1       │  2       │  3       │ .        │
             &none   &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none                  &kp KP_COMMA &kp N1     &kp N2     &kp N3     &kp KP_DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤              ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &none                     &none      &none
+                                             &trans     &trans                    &trans     &trans
         //                                 ╰──────────┴──────────╯              ╰──────────┴──────────╯
             >;
         };
