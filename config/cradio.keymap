@@ -6,6 +6,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 &lt { // custom layer tap with repeat
+    flavor = "tap-preferred"; // hold-preferred, balanced, tap-preferred
     quick-tap-ms = <150>; // enables double press+hold to hold the key (useful for backspace)
 };
 
