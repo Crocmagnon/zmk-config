@@ -10,7 +10,7 @@ layers:
   - {t: J, right: "@"}
   - {t: M, right: "&"}
   - {t: D, right: "*"}
-  - {t: "!", right: "'"}
+  - {t: "★", s: "!", right: "'"}
   - {t: Y, right: "`"}
   - {t: A, h: "⇧", right: "{"}
   - {t: S, h: "⌥", right: "("}
