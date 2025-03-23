@@ -16,7 +16,7 @@
             require-prior-idle-ms = <100>; // disable hold tap when typing quickly 
             bindings = <&kp>, <&kp>;
         };
-        ltr: hold_tap { // custom layer tap with repeat
+        ltr: layer_tap { // custom layer tap with repeat
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
