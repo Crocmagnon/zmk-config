@@ -12,7 +12,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred"; // hold-preferred, balanced, tap-preferred
             tapping-term-ms = <220>; // duration in ms after which a key press is considered hold
-            //quick-tap-ms = <150>; // enables double press+hold to hold the key (useful for backspace)
+            quick-tap-ms = <300>; // enables double press+hold to hold the key (useful for backspace)
             require-prior-idle-ms = <100>; // disable hold tap when typing quickly 
             bindings = <&kp>, <&kp>;
         };
