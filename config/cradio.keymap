@@ -77,8 +77,8 @@
         //│  F1      │  F2      │  F3      │  F4      │  F5      │   │  F6      │  F7      │  F8      │  F9      │  F10     │
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  TAB     │  ALT     │  CMD     │  CTRL    │          │   │          │  CTRL    │  CMD     │  ALT     │  F11     │
-          &ht LSHFT TAB &kp LALT  &kp LGUI   &kp LCTRL  &none          &none     &kp RCTRL  &kp RGUI   &kp RALT   &ht RSHFT F11
+        //│  TAB     │  ALT     │  CMD     │  TAB     │          │   │          │  CTRL    │  CMD     │  ALT     │  F11     │
+          &ht LSHFT TAB &kp LALT  &kp LGUI &ht LCTRL TAB  &none          &none     &kp RCTRL  &kp RGUI   &kp RALT   &ht RSHFT F11
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │ CMD+1    │ CMD+4    │CMD+SFT+4 │          │   │          │          │          │          │  F12     │
             &none   &kp LG(N1) &kp LG(N4) &kp LG(LS(N4)) &none          &none      &none      &none      &none      &kp F12
