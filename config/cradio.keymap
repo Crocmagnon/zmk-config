@@ -65,8 +65,8 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮              ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ SFT SFT  │  HOME    │  UP      │  END     │  PG UP   │              │ FSLH     │  7       │  8       │  9       │          │
-         &double_shift &kp HOME   &kp UP     &kp END    &kp PG_UP               &kp KP_SLASH &kp N7     &kp N8     &kp N9     &none
+        //│          │  HOME    │  UP      │  END     │  PG UP   │              │ FSLH     │  7       │  8       │  9       │          │
+            &none      &kp HOME   &kp UP     &kp END    &kp PG_UP               &kp KP_SLASH &kp N7     &kp N8     &kp N9     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤              ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  TAB     │  LEFT    │  DOWN    │  RIGHT   │  PG DN   │              │ -        │  4       │  5       │  6       │  0       │
    &ht LSHFT TAB &ht LALT LEFT &ht LGUI DOWN &ht LCTRL RIGHT &kp PG_DN       &kp KP_MINUS &ht RCTRL N4 &ht RGUI N5 &ht RALT N6 &ht RSHFT N0
@@ -81,18 +81,18 @@
 
         left_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  F1      │  F2      │  F3      │  F4      │  F5      │   │  F6      │  F7      │  F8      │  F9      │  F10     │
-            &none      &none      &none      &none      &none          &none      &kp F7     &kp F8     &kp F9     &kp F10
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  TAB     │  ALT     │  CMD     │  TAB     │  CMD+R   │   │          │  CTRL    │  CMD     │  ALT     │  F11     │
-          &ht LSHFT TAB &kp LALT  &kp LGUI &ht LCTRL TAB &kp LG(J)     &none  &ht RCTRL F4 &ht RGUI F5 &ht RALT F6 &ht RSHFT F11
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │ CMD+1    │ CMD+4    │CMD+SFT+4 │  CMD+T   │   │          │          │          │          │  F12     │
-            &none   &kp LG(N1) &kp LG(N4) &kp LG(LS(N4)) &kp LG(K)     &none      &kp F1     &kp F2     &kp F3     &kp F12
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮          ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │          │          │  F7      │  F8      │  F9      │  F10     │
+            &none      &none      &none      &none      &none                 &none      &kp F7     &kp F8     &kp F9     &kp F10
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  TAB     │  TAB     │  TAB     │  TAB     │  CMD+R   │          │          │  F4      │  F5      │  F6      │  F11     │
+     &ht LSHFT TAB &ht LALT TAB &ht LGUI TAB &ht LCTRL TAB &kp LG(J)          &none  &ht RCTRL F4 &ht RGUI F5 &ht RALT F6 &ht RSHFT F11
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ SFT SFT  │ CMD+1    │ CMD+4    │CMD+SFT+4 │  CMD+T   │          │          │  F1      │  F2      │  F3      │  F12     │
+        &double_shift &kp LG(N1) &kp LG(N4) &kp LG(LS(N4)) &kp LG(K)          &none      &kp F1     &kp F2     &kp F3     &kp F12
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans                &trans     &trans
+        //                                 ╰──────────┴──────────╯          ╰──────────┴──────────╯
             >;
         };
 
