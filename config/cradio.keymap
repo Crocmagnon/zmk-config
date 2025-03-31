@@ -6,6 +6,14 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    macros {
+        double_shift: double_shift {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LSHFT &kp LSHFT>;
+        };
+    };
+
     behaviors {
         ht: hold_tap { // https://zmk.dev/docs/keymaps/behaviors/hold-tap
             compatible = "zmk,behavior-hold-tap";
@@ -57,8 +65,8 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮              ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  HOME    │  UP      │  END     │  PG UP   │              │ FSLH     │  7       │  8       │  9       │          │
-            &none      &kp HOME   &kp UP     &kp END    &kp PG_UP               &kp KP_SLASH &kp N7     &kp N8     &kp N9     &none
+        //│ SFT SFT  │  HOME    │  UP      │  END     │  PG UP   │              │ FSLH     │  7       │  8       │  9       │          │
+         &double_shift &kp HOME   &kp UP     &kp END    &kp PG_UP               &kp KP_SLASH &kp N7     &kp N8     &kp N9     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤              ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  TAB     │  LEFT    │  DOWN    │  RIGHT   │  PG DN   │              │ -        │  4       │  5       │  6       │  0       │
    &ht LSHFT TAB &ht LALT LEFT &ht LGUI DOWN &ht LCTRL RIGHT &kp PG_DN       &kp KP_MINUS &ht RCTRL N4 &ht RGUI N5 &ht RALT N6 &ht RSHFT N0
