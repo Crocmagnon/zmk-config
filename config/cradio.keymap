@@ -29,7 +29,6 @@
             quick-tap-ms = <150>; // enables double press+hold to hold the key (useful for backspace)
             require-prior-idle-ms = <100>; // disable hold tap when typing quickly 
             bindings = <&kp>, <&kp>;
-            hold-while-undecided;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
         };
@@ -41,7 +40,6 @@
             quick-tap-ms = <150>; // enables double press+hold to hold the key (useful for backspace)
             require-prior-idle-ms = <100>; // disable hold tap when typing quickly 
             bindings = <&kp>, <&kp>;
-            hold-while-undecided;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
         };
