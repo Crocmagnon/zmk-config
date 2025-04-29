@@ -23,14 +23,14 @@ layers:
   - {t: I, h: "gui", right: "/"}
   - {t: U, h: "shift", right: '"'}
   - {t: Z, right: "~"}
-  - {t: X, right: "["}
+  - {t: X, h: alt gr, right: "["}
   - {t: "-", s: "?", right: "]"}
   - {t: V, right: "_"}
   - {t: B, right: "#"}
   - {t: ".", s: ":", right: "|"}
   - {t: H, right: "!"}
   - {t: G, right: ";"}
-  - {t: ",", s: ";", right: ":"}
+  - {t: ",", h: alt gr, s: ";", right: ":"}
   - {t: K, right: "?"}
   - {t: ⎋, h: shift}
   - {t: ⌫, h: left}

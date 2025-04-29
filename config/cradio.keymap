@@ -74,7 +74,7 @@
          &hl LSHFT A &hl LGUI S &hl LCTRL D &hl LALT F  &kp G          &kp H    &hr LALT J &hr RCTRL K &hr RGUI L &hr RSHFT SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │ - ?      │  V       │  B       │   │ . :      │  H       │  G       │ , ;      │  K       │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+            &kp Z     &hl RALT X &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA &hr RALT DOT &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                          &hl LSHFT ESC &ltr 2 BSPC   &ltr 1 SPACE &hr RALT ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
