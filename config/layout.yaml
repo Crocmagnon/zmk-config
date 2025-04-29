@@ -12,16 +12,16 @@ layers:
   - {t: D, right: "*"}
   - {t: "★", s: "!", right: "'"}
   - {t: Y, right: "`"}
-  - {t: A, h: "⇧", right: "{"}
-  - {t: S, h: "⌥", right: "("}
-  - {t: E, h: "⌘", right: ")"}
-  - {t: N, h: "⌃", right: "}"}
+  - {t: A, h: "shift", right: "{"}
+  - {t: S, h: "gui", right: "("}
+  - {t: E, h: "ctrl", right: ")"}
+  - {t: N, h: "alt", right: "}"}
   - {t: F, right: "="}
   - {t: L, right: "\\"}
-  - {t: R, h: "⌃", right: "+"}
-  - {t: T, h: "⌘", right: "-"}
-  - {t: I, h: "⌥", right: "/"}
-  - {t: U, h: "⇧", right: '"'}
+  - {t: R, h: "alt", right: "+"}
+  - {t: T, h: "ctrl", right: "-"}
+  - {t: I, h: "gui", right: "/"}
+  - {t: U, h: "shift", right: '"'}
   - {t: Z, right: "~"}
   - {t: X, right: "["}
   - {t: "-", s: "?", right: "]"}
@@ -32,10 +32,10 @@ layers:
   - {t: G, right: ";"}
   - {t: ",", s: ";", right: ":"}
   - {t: K, right: "?"}
-  - ⎋
+  - {t: ⎋, h: shift}
   - {t: ⌫, h: left}
   - {t: ␣, h: right}
-  - ↩
+  - {t: ↩, h: alt gr}
   right:
   - ''
   - "⇱"
@@ -47,20 +47,20 @@ layers:
   - '8'
   - '9'
   - ''
-  - {t: "↹", h: "⇧"}
-  - {t: "←", h: "⌥"}
-  - {t: "↓", h: "⌘"}
-  - {t: "→", h: "⌃"}
+  - {t: "↹", h: "shift"}
+  - {t: "←", h: "gui"}
+  - {t: "↓", h: "ctrl"}
+  - {t: "→", h: "alt"}
   - "⇟"
   - "-"
-  - {t: '4', h: "⌃"}
-  - {t: '5', h: "⌘"}
-  - {t: '6', h: "⌥"}
-  - {t: '0', h: "⇧"}
+  - {t: '4', h: "alt"}
+  - {t: '5', h: "ctrl"}
+  - {t: '6', h: "gui"}
+  - {t: '0', h: "shift"}
   - ''
-  - VOL DN
+  - VOL-
   - MUTE
-  - VOL UP
+  - VOL+
   - ''
   - ","
   - '1'
@@ -82,21 +82,21 @@ layers:
   - F8
   - F9
   - F10
-  - {t: ↹, h: "⇧"}
-  - {t: ↹, h: "⌥"}
-  - {t: ↹, h: "⌘"}
-  - {t: ↹, h: "⌃"}
-  - ⌘R
+  - {t: ↹, h: "shift"}
+  - {t: ↹, h: "gui"}
+  - {t: ↹, h: "ctrl"}
+  - {t: ↹, h: "alt"}
+  - ctrl+R
   - ''
-  - {t: F4, h: "⌃"}
-  - {t: F5, h: "⌘"}
-  - {t: F6, h: "⌥"}
-  - {t: F11, h: "⇧"}
+  - {t: F4, h: "alt"}
+  - {t: F5, h: "ctrl"}
+  - {t: F6, h: "gui"}
+  - {t: F11, h: "shift"}
   - "⇧⇧"
-  - ⌘1
-  - ⌘4
-  - ⌘⇧4
-  - ⌘T
+  - alt+shft+A
+  - alt+shft+E
+  - prnt scrn
+  - ctrl+T
   - ''
   - F1
   - F2
@@ -112,7 +112,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BT 0
-  - {t: ▽, type: trans}
+  - BT 3
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -122,7 +122,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BT 1
-  - {t: ▽, type: trans}
+  - BT 4
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
