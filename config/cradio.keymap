@@ -71,7 +71,7 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  E       │  N       │  F       │   │  L       │  R       │  T       │  I       │  U       │
-         &hl LSHFT A &hl LGUI S &hl LCTRL D &hl RALT F  &kp G          &kp H    &hr RALT J &hr RCTRL K &hr RGUI L &hr RSHFT SEMI
+         &hl LSHFT A &hl LGUI S &hl LCTRL D &hl LALT F  &kp G          &kp H    &hr LALT J &hr RCTRL K &hr RGUI L &hr RSHFT SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │ - ?      │  V       │  B       │   │ . :      │  H       │  G       │ , ;      │  K       │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
@@ -88,7 +88,7 @@
             &none      &kp HOME   &kp UP     &kp END    &kp PG_UP               &kp KP_SLASH &kp N7     &kp N8     &kp N9     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤              ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  TAB     │  LEFT    │  DOWN    │  RIGHT   │  PG DN   │              │ -        │  4       │  5       │  6       │  0       │
-   &hl LSHFT TAB &hl LGUI LEFT &hl LCTRL DOWN &hl RALT RIGHT &kp PG_DN       &kp KP_MINUS &hr RALT N4 &hr RCTRL N5 &hr RGUI N6 &hr RSHFT N0
+   &hl LSHFT TAB &hl LGUI LEFT &hl LCTRL DOWN &hl LALT RIGHT &kp PG_DN       &kp KP_MINUS &hr LALT N4 &hr RCTRL N5 &hr RGUI N6 &hr RSHFT N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤              ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  VOL-    │  MUTE    │  VOL+    │          │              │ ,        │  1       │  2       │  3       │ .        │
             &none   &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none                  &kp KP_COMMA &kp N1     &kp N2     &kp N3     &kp KP_DOT
@@ -104,11 +104,11 @@
         //│          │          │          │          │          │          │          │  F7      │  F8      │  F9      │  F10     │
             &none      &none      &none      &none      &none                 &none      &kp F7     &kp F8     &kp F9     &kp F10
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  TAB     │  TAB     │  TAB     │  TAB     │  CMD+R   │          │          │  F4      │  F5      │  F6      │  F11     │
-     &hl LSHFT TAB &hl LGUI TAB &hl LCTRL TAB &hl RALT TAB &kp LG(J)          &none  &hr RALT F4 &hr RCTRL F5 &hr RGUI F6 &hr RSHFT F11
+        //│  TAB     │  TAB     │  TAB     │  TAB     │ CTRL+R   │          │          │  F4      │  F5      │  F6      │  F11     │
+     &hl LSHFT TAB &hl LGUI TAB &hl LCTRL TAB &hl LALT TAB &kp LC(J)          &none  &hr LALT F4 &hr RCTRL F5 &hr RGUI F6 &hr RSHFT F11
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ SFT SFT  │ CMD+1    │ CMD+4    │CMD+SFT+4 │  CMD+T   │          │          │  F1      │  F2      │  F3      │  F12     │
-        &double_shift &kp LG(N1) &kp LG(N4) &kp LG(LS(N4)) &kp LG(K)          &none      &kp F1     &kp F2     &kp F3     &kp F12
+        //│ SFT SFT  │ALT+SFT+A │ALT+SFT+E │ PSCRN    │ CTRL+T   │          │          │  F1      │  F2      │  F3      │  F12     │
+     &double_shift &kp LA(LS(A)) &kp LA(LS(E)) &kp PSCRN &kp LC(K)            &none      &kp F1     &kp F2     &kp F3     &kp F12
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans                &trans     &trans
         //                                 ╰──────────┴──────────╯          ╰──────────┴──────────╯
@@ -118,11 +118,11 @@
         tri_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
+        //│ RESET    │          │          │          │PROFILE 0 │   │PROFILE 3 │          │          │          │  RESET   │
+           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0 &bt BT_SEL 3  &trans     &trans     &trans    &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
+        //│BOOTLOADER│          │          │          │PROFILE 1 │   │PROFILE 4 │          │          │          │BOOTLOADER│
+          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1 &bt BT_SEL 4  &trans     &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
          &studio_unlock &trans    &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans   &studio_unlock
