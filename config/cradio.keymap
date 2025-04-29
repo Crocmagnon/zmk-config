@@ -107,8 +107,8 @@
         //│  TAB     │  TAB     │  TAB     │  TAB     │ CTRL+R   │          │          │  F4      │  F5      │  F6      │  F11     │
      &hl LSHFT TAB &hl LGUI TAB &hl LCTRL TAB &hl LALT TAB &kp LC(J)          &none  &hr LALT F4 &hr RCTRL F5 &hr RGUI F6 &hr RSHFT F11
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ SFT SFT  │ALT+SFT+A │ALT+SFT+E │ PSCRN    │ CTRL+T   │          │          │  F1      │  F2      │  F3      │  F12     │
-     &double_shift &kp LA(LS(A)) &kp LA(LS(E)) &kp PSCRN &kp LC(K)            &none      &kp F1     &kp F2     &kp F3     &kp F12
+        //│ SFT SFT  │ALT+SFT+A │ALT+SFT+E │ PSCRN    │ CTRL+T   │          │          │  F1      │  F2      │  F3      │  F12     │
+     &double_shift &kp LA(LS(A)) &kp LA(LS(D)) &kp PSCRN &kp LC(K)            &none      &kp F1     &kp F2     &kp F3     &kp F12
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans                &trans     &trans
         //                                 ╰──────────┴──────────╯          ╰──────────┴──────────╯
