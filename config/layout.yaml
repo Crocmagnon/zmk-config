@@ -93,8 +93,8 @@ layers:
   - {t: F6, h: "gui"}
   - {t: F11, h: "shift"}
   - "⇧⇧"
-  - alt+shft+A
-  - alt+shft+E
+  - webex all
+  - webex unread
   - prnt scrn
   - ctrl+T
   - ''
