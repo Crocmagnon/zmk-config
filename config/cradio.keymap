@@ -43,6 +43,28 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
         };
+        hlt: hold_tap_left_thumb { // https://zmk.dev/docs/keymaps/behaviors/hold-tap
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred"; // hold-preferred, balanced, tap-preferred
+            tapping-term-ms = <140>; // duration in ms after which a key press is considered hold
+            quick-tap-ms = <150>; // enables double press+hold to hold the key (useful for backspace)
+            require-prior-idle-ms = <100>; // disable hold tap when typing quickly
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+        hrt: hold_tap_right_thumb { // https://zmk.dev/docs/keymaps/behaviors/hold-tap
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred"; // hold-preferred, balanced, tap-preferred
+            tapping-term-ms = <140>; // duration in ms after which a key press is considered hold
+            quick-tap-ms = <150>; // enables double press+hold to hold the key (useful for backspace)
+            require-prior-idle-ms = <100>; // disable hold tap when typing quickly
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
         ltr: layer_tap { // custom layer tap with repeat
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -71,10 +93,10 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  E       │  N       │  F       │   │  L       │  R       │  T       │  I       │  U       │
-         &hl LSHFT A &hl LGUI S &hl LCTRL D &hl LALT F  &kp G          &kp H    &hr LALT J &hr RCTRL K &hr RGUI L &hr RSHFT SEMI
+            &kp A    &hl LGUI S &hl LCTRL D &hl LALT F  &kp G          &kp H    &hr LALT J &hr RCTRL K &hr RGUI L  &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │ - ?      │  V       │  B       │   │ . :      │  H       │  G       │ , ;      │  K       │
-            &kp Z     &hl RALT X &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA &hr RALT DOT &kp FSLH
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                          &hl LSHFT ESC &ltr 2 BSPC   &ltr 1 SPACE &hr RALT ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -88,7 +110,7 @@
             &none      &kp HOME   &kp UP     &kp END    &kp PG_UP               &kp KP_SLASH &kp N7     &kp N8     &kp N9     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤              ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  TAB     │  LEFT    │  DOWN    │  RIGHT   │  PG DN   │              │ -        │  4       │  5       │  6       │  0       │
-   &hl LSHFT TAB &hl LGUI LEFT &hl LCTRL DOWN &hl LALT RIGHT &kp PG_DN       &kp KP_MINUS &hr LALT N4 &hr RCTRL N5 &hr RGUI N6 &hr RSHFT N0
+         &kp TAB &hl LGUI LEFT &hl LCTRL DOWN &hl LALT RIGHT &kp PG_DN       &kp KP_MINUS &hr LALT N4 &hr RCTRL N5 &hr RGUI N6 &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤              ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  VOL-    │  MUTE    │  VOL+    │          │              │ ,        │  1       │  2       │  3       │ .        │
             &none   &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none                  &kp KP_COMMA &kp N1     &kp N2     &kp N3     &kp KP_DOT
@@ -105,7 +127,7 @@
             &none      &none      &none      &none      &kp DEL               &none      &kp F7     &kp F8     &kp F9     &kp F10
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  TAB     │  TAB     │  TAB     │  TAB     │ CTRL+R   │          │          │  F4      │  F5      │  F6      │  F11     │
-     &hl LSHFT TAB &hl LGUI TAB &hl LCTRL TAB &hl LALT TAB &kp LC(J)          &none  &hr LALT F4 &hr RCTRL F5 &hr RGUI F6 &hr RSHFT F11
+           &kp TAB &hl LGUI TAB &hl LCTRL TAB &hl LALT TAB &kp LC(J)          &none  &hr LALT F4 &hr RCTRL F5 &hr RGUI F6 &kp F11
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ SFT SFT  │ALT+SFT+A │ALT+SFT+E │ PSCRN    │ CTRL+T   │          │          │  F1      │  F2      │  F3      │  F12     │
      &double_shift &kp LA(LS(A)) &kp LA(LS(D)) &kp PSCRN &kp LC(K)            &none      &kp F1     &kp F2     &kp F3     &kp F12
